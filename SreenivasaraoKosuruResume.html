@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreenivasarao Kosuru - Engineering Leader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #334155;
+            --accent: #3b82f6;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.4;
+            color: var(--dark);
+            background: white;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--dark);
+            color: white;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+        }
+
+        .hero-image img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+
+        .hero .tagline {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .badge {
+            background: var(--accent);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 1.05rem;
+        }
+
+        /* Stats */
+        .stats {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+            color: var(--dark);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Section */
+        .section {
+            padding: 20px 0;
+        }
+
+        .section-alt {
+            background: #f8fafc;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-weight: 600;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Value Cards */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .value-card {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+        }
+
+        .value-icon {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .value-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .value-text {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        /* Skills Compact */
+        .skills-compact {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .skill-group-compact {
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+        }
+
+        .skill-group-compact h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .skill-tags-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .skill-tag-compact {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 2px 6px;
+            background: #f1f5f9;
+            border-radius: 3px;
+            font-size: 1.05rem;
+        }
+
+        /* Timeline Compact */
+        .timeline-compact {
+            display: grid;
+            gap: 10px;
+        }
+
+        .timeline-item-compact {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .timeline-item-compact:hover {
+            border-color: var(--accent);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        .timeline-main {
+            flex: 1;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 3px;
+        }
+
+        .timeline-company {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .timeline-role {
+            font-size: 1.05rem;
+            color: var(--accent);
+        }
+
+        .timeline-expand {
+            font-size: 1.05rem;
+            color: var(--gray);
+        }
+
+        .timeline-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .timeline-item-compact.expanded .timeline-details {
+            max-height: 400px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+
+        .timeline-item-compact.expanded .timeline-expand {
+            transform: rotate(180deg);
+        }
+
+        .timeline-highlights {
+            list-style: none;
+            padding: 0;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .timeline-highlights li {
+            padding-left: 12px;
+            margin-bottom: 3px;
+            position: relative;
+        }
+
+        .timeline-highlights li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .timeline-tech-compact {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .tech-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 2px 6px;
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            font-size: 1.05rem;
+        }
+
+        /* Education Compact */
+        .education-compact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .edu-card {
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+        }
+
+        .edu-degree {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+            color: var(--dark);
+        }
+
+        .edu-school {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 2px;
+        }
+
+        .edu-year {
+            font-size: 1.05rem;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .print-break {
+            page-break-after: always;
+        }
+
+        @media print {
+            body { font-size: 13px; }
+            .section { padding: 15px 0; }
+            .hero { padding: 20px 0; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content { flex-direction: column; text-align: center; }
+            .two-col, .value-grid, .skills-compact, .education-compact { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="data:image/webp;base64,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" alt="Sreenivasarao Kosuru">
+                </div>
+                <div class="hero-text">
+                    <h1>Sreenivasarao Kosuru</h1>
+                    <div class="subtitle">Senior Engineering Leader & AI Champion</div>
+                    <p class="tagline">
+                        20+ years experience with 14+ years in management • Led teams of 20+ directly • $100M project delivery • B2B/B2C expertise • AI-driven SDLC & automation champion
+                    </p>
+                    <div class="contact-info">
+                        <div>✉️ kosuru@gmail.com</div>
+                        <div>📱 +91-****7022</div>
+                        <div>📍 Hyderabad, India</div>
+                        <div><a href="https://www.linkedin.com/in/kosuru/" target="_blank">🔗 LinkedIn</a></div>
+                    </div>
+                    <div class="badge">Actively looking for senior management roles • Immediately Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years Exp.</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">14+</div>
+                    <div class="stat-label">Mgmt Years</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Direct Reports</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$100M</div>
+                    <div class="stat-label">Project Value</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">AI Productivity</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value & Skills -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Value I Bring</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">📊</div>
+                    <div class="value-title">Productivity Gains</div>
+                    <div class="value-text">30% dev productivity boost, 20% faster releases via AI</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💰</div>
+                    <div class="value-title">Cost Reduction</div>
+                    <div class="value-text">40% optimization, SLA from 5 days to 3 hours</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <div class="value-title">B2B/B2C Delivery</div>
+                    <div class="value-text">$100M projects in US/EU regulated markets</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">👥</div>
+                    <div class="value-title">Team Management</div>
+                    <div class="value-text">Empowered engineers and successfully converted interns to award-winning full-time professionals</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚙️</div>
+                    <div class="value-title">Process Transform</div>
+                    <div class="value-text">Agile pioneer, 20% defect reduction</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤖</div>
+                    <div class="value-title">AI Integration</div>
+                    <div class="value-text">SDLC automation, code reviews, app gen</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">👔</div>
+                    <div class="value-title">Engineering Leadership</div>
+                    <div class="value-text">Team building, OKR governance, strategy</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-title">AI Strategy</div>
+                    <div class="value-text">SDLC automation, code reviews, workflows</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔧</div>
+                    <div class="value-title">Process Optimization</div>
+                    <div class="value-text">Agile, CI/CD, quality metrics</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🏗️</div>
+                    <div class="value-title">Architecture</div>
+                    <div class="value-text">Microservices, API-first, event-driven</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <div class="value-title">B2B/Compliance</div>
+                    <div class="value-text">PCI-DSS, GDPR, security audits</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">☁️</div>
+                    <div class="value-title">Cloud/DevOps</div>
+                    <div class="value-text">AWS, Docker, K8s, CI/CD pipelines</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-compact">
+                <div class="skill-group-compact">
+                    <h4>Backend</h4>
+                    <div class="skill-tags-compact">
+                        <span class="skill-tag-compact">🐍 Python</span>
+                        <span class="skill-tag-compact">☕ Java</span>
+                        <span class="skill-tag-compact">#️⃣ C#</span>
+                        <span class="skill-tag-compact">🍃 Spring Boot</span>
+                        <span class="skill-tag-compact">⚡ FastAPI</span>
+                        <span class="skill-tag-compact">🟢 Node.js</span>
+                    </div>
+                </div>
+                <div class="skill-group-compact">
+                    <h4>Frontend & Mobile</h4>
+                    <div class="skill-tags-compact">
+                        <span class="skill-tag-compact">⚛️ React</span>
+                        <span class="skill-tag-compact">🅰️ Angular</span>
+                        <span class="skill-tag-compact">📘 TypeScript</span>
+                        <span class="skill-tag-compact">📜 JavaScript</span>
+                        <span class="skill-tag-compact">📱 Android</span>
+                    </div>
+                </div>
+                <div class="skill-group-compact">
+                    <h4>Databases</h4>
+                    <div class="skill-tags-compact">
+                        <span class="skill-tag-compact">🐘 PostgreSQL</span>
+                        <span class="skill-tag-compact">🐬 MySQL</span>
+                        <span class="skill-tag-compact">🍃 MongoDB</span>
+                        <span class="skill-tag-compact">📊 MS SQL</span>
+                    </div>
+                </div>
+                <div class="skill-group-compact">
+                    <h4>Cloud & DevOps</h4>
+                    <div class="skill-tags-compact">
+                        <span class="skill-tag-compact">☁️ AWS</span>
+                        <span class="skill-tag-compact">🐳 Docker</span>
+                        <span class="skill-tag-compact">☸️ Kubernetes</span>
+                        <span class="skill-tag-compact">🔧 Jenkins</span>
+                        <span class="skill-tag-compact">🔄 GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="skill-group-compact">
+                    <h4>AI & Automation</h4>
+                    <div class="skill-tags-compact">
+                        <span class="skill-tag-compact">🤖 Copilot</span>
+                        <span class="skill-tag-compact">✨ Cursor</span>
+                        <span class="skill-tag-compact">🔥 PyTorch</span>
+                        <span class="skill-tag-compact">🧠 TensorFlow</span>
+                        <span class="skill-tag-compact">🔗 n8n</span>
+                    </div>
+                </div>
+                <div class="skill-group-compact">
+                    <h4>Security & Messaging</h4>
+                    <div class="skill-tags-compact">
+                        <span class="skill-tag-compact">🛡️ Fortify</span>
+                        <span class="skill-tag-compact">🔒 Checkmarx</span>
+                        <span class="skill-tag-compact">📊 SonarQube</span>
+                        <span class="skill-tag-compact">📨 Kafka</span>
+                        <span class="skill-tag-compact">⚡ Redis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="print-break"></div>
+
+    <!-- Career Journey -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Career Journey (Click to expand)</h2>
+            <div class="timeline-compact">
+                <div class="timeline-item-compact" onclick="this.classList.toggle('expanded')">
+                    <div class="timeline-header">
+                        <div class="timeline-main">
+                            <div class="timeline-date">Feb 2025 - Aug 2025</div>
+                            <div class="timeline-company">Razorpay</div>
+                            <div class="timeline-role">Senior Engineering Manager</div>
+                        </div>
+                        <div class="timeline-expand">▼</div>
+                    </div>
+                    <div class="timeline-details">
+                        <ul class="timeline-highlights">
+                            <li>Led 4 cross-functional PODs: Card Devices, Card Processing Backend, Certification, A1 & Re-architecture (20+ team: EM, Tech Lead)</li>
+                            <li>Drove quarterly planning with Leadership, OPEX governance, weekly leadership reporting</li>
+                            <li>Spearheaded AI adoption: GitHub Copilot, Cursor, Gemini, Google LM, MCP Server - 1.3x efficiency improvement</li>
+                            <li>Led strategic hiring: Engineering Managers, PDEs, PMs evaluation and onboarding</li>
+                            <li>Talent development, performance evaluations, calibration at leadership level</li>
+                            <li>Partnered with PMs, TPMs, business stakeholders for priorities, dependencies, mission-critical programs</li>
+                            <li>Owned end-to-end delivery, architecture, quality via Agile, sprint discipline, technical excellence</li>
+                            <li>Hands-on technical and code reviews for critical projects - architectural robustness, scalability</li>
+                            <li>Streamlined ad-hoc requests via structured prioritization - 30% team bandwidth saved</li>
+                            <li>Led production issue management - high responsiveness, minimal downtime, proactive communication</li>
+                            <li>Institutionalized AI-driven documentation, cross-POD knowledge sharing - improved autonomy, reduced silos</li>
+                        </ul>
+                        <div class="timeline-tech-compact">
+                            <span class="tech-tag">☕ Java</span>
+                            <span class="tech-tag">🍃 Spring Boot</span>
+                            <span class="tech-tag">🐬 MySQL</span>
+                            <span class="tech-tag">🍃 MongoDB</span>
+                            <span class="tech-tag">📨 Kafka</span>
+                            <span class="tech-tag">⚡ Redis</span>
+                            <span class="tech-tag">☁️ AWS</span>
+                            <span class="tech-tag">🐳 Docker</span>
+                            <span class="tech-tag">☸️ Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-compact" onclick="this.classList.toggle('expanded')">
+                    <div class="timeline-header">
+                        <div class="timeline-main">
+                            <div class="timeline-date">Jan 2022 - Jan 2025</div>
+                            <div class="timeline-company">Pragmatic Play</div>
+                            <div class="timeline-role">Engineering Manager</div>
+                        </div>
+                        <div class="timeline-expand">▼</div>
+                    </div>
+                    <div class="timeline-details">
+                        <ul class="timeline-highlights">
+                            <li><strong>Strategic:</strong> Conceived "LC Integrations" service - improved SLAs, enhanced customer satisfaction</li>
+                            <li>Pioneered automation: SLA 4 days → 3 hours, drastically improved throughput, reduced manual workloads</li>
+                            <li>Championed company's first true Sprint implementation - agility culture, rapid iteration, aligned cross-functional teams</li>
+                            <li>Primary technical compliance leader - regulatory standards, business alignment, risk mitigation</li>
+                            <li>Partnered with Architecture, DevOps, Database teams - balanced technical quality with business urgency</li>
+                            <li>Built high-performance teams - recruited Engineering Managers and Leads aligned with strategic objectives</li>
+                            <li><strong>Tactical:</strong> Implemented Swagger, Sequence Diagrams, ER Diagrams, Sonar, Postman Mock Server</li>
+                            <li>Supported large-scale ops: 10,000+ casino configurations - scalability in high-pressure environments</li>
+                            <li>Sole POC for compliance-aligned technical solutions - bridged business needs and legal mandates</li>
+                            <li>Delivered on tight timelines - balanced quality and speed with cross-functional teams</li>
+                            <li>Built healthy engineering culture: peer reviews, testing, recognition programs, learning hours, team fun sessions</li>
+                        </ul>
+                        <div class="timeline-tech-compact">
+                            <span class="tech-tag">☕ Java</span>
+                            <span class="tech-tag">🍃 Spring Boot</span>
+                            <span class="tech-tag">📨 Kafka</span>
+                            <span class="tech-tag">⚡ Redis</span>
+                            <span class="tech-tag">📊 SQL Server</span>
+                            <span class="tech-tag">🐘 Postgres</span>
+                            <span class="tech-tag">⚛️ React</span>
+                            <span class="tech-tag">🅰️ Angular</span>
+                            <span class="tech-tag">☁️ AWS</span>
+                            <span class="tech-tag">📊 SonarQube</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-compact" onclick="this.classList.toggle('expanded')">
+                    <div class="timeline-header">
+                        <div class="timeline-main">
+                            <div class="timeline-date">Dec 2019 - Jan 2022</div>
+                            <div class="timeline-company">Gain Credit / OYE Fintech</div>
+                            <div class="timeline-role">Engineering Manager</div>
+                        </div>
+                        <div class="timeline-expand">▼</div>
+                    </div>
+                    <div class="timeline-details">
+                        <ul class="timeline-highlights">
+                            <li>Managed delivery, Quality, COPS (Customer Operations Engineering) team of 12 members</li>
+                            <li>Ensured SLAs met for customer tickets and roadmap items</li>
+                            <li>Worked closely with COPS team, PO team, stakeholders for smooth execution</li>
+                            <li>Rolled out process improvements to balance roadmap and ad-hoc items</li>
+                            <li>Responsible for hiring engineers (SE to Lead levels)</li>
+                            <li>Designed and rolled out API-first Online KYC Platform in Python (Flask)</li>
+                            <li>Integrated OCR and Face Recognition - cut verification time 45 mins → 3 mins</li>
+                            <li>Final reviewer for Design, code reviews and engineering sign-off</li>
+                        </ul>
+                        <div class="timeline-tech-compact">
+                            <span class="tech-tag">🐍 Python</span>
+                            <span class="tech-tag">⚡ Flask</span>
+                            <span class="tech-tag">🐬 MySQL</span>
+                            <span class="tech-tag">☁️ AWS</span>
+                            <span class="tech-tag">🐳 Docker</span>
+                            <span class="tech-tag">📱 Android</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-compact" onclick="this.classList.toggle('expanded')">
+                    <div class="timeline-header">
+                        <div class="timeline-main">
+                            <div class="timeline-date">Nov 2018 - Nov 2019</div>
+                            <div class="timeline-company">Sri Medho Technologies</div>
+                            <div class="timeline-role">Founder & Managing Partner</div>
+                        </div>
+                        <div class="timeline-expand">▼</div>
+                    </div>
+                    <div class="timeline-details">
+                        <ul class="timeline-highlights">
+                            <li>Providing trainings in Cloud Technologies (Azure/AWS)</li>
+                            <li>Training programs: Python, Java, Angular, Web Development</li>
+                            <li>Training in Git, Kubernetes, Docker, Kafka</li>
+                            <li>Worked on multiple web development projects for clients</li>
+                        </ul>
+                        <div class="timeline-tech-compact">
+                            <span class="tech-tag">☁️ AWS</span>
+                            <span class="tech-tag">☁️ Azure</span>
+                            <span class="tech-tag">🐍 Python</span>
+                            <span class="tech-tag">☕ Java</span>
+                            <span class="tech-tag">🅰️ Angular</span>
+                            <span class="tech-tag">🐳 Docker</span>
+                            <span class="tech-tag">☸️ Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-compact" onclick="this.classList.toggle('expanded')">
+                    <div class="timeline-header">
+                        <div class="timeline-main">
+                            <div class="timeline-date">Apr 2017 - Nov 2018</div>
+                            <div class="timeline-company">PAREXEL</div>
+                            <div class="timeline-role">Manager, Software Engineering</div>
+                        </div>
+                        <div class="timeline-expand">▼</div>
+                    </div>
+                    <div class="timeline-details">
+                        <ul class="timeline-highlights">
+                            <li>Architected ODM project solutions - reduced delivery time, great customer satisfaction</li>
+                            <li>Led & implemented i18n layer (MLization) - entire codebase (DB, Web, Frontend) Unicode compatible for multilingual launch</li>
+                            <li>Introduced improved engineering processes: more code reviews, integrated SonarQube, increased code coverage, integration tests</li>
+                            <li>Reduced build time from 3 hours to under 1 hour - predictable outcomes</li>
+                            <li>Ensured customer audits completed successfully without blockers or delays</li>
+                            <li>Managed team of 7 members with varying experience including 1 DB developer</li>
+                        </ul>
+                        <div class="timeline-tech-compact">
+                            <span class="tech-tag">#️⃣ C#</span>
+                            <span class="tech-tag">🔷 .NET</span>
+                            <span class="tech-tag">📊 SQL Server</span>
+                            <span class="tech-tag">🔧 TFS</span>
+                            <span class="tech-tag">☁️ Azure</span>
+                            <span class="tech-tag">📊 SonarQube</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-compact" onclick="this.classList.toggle('expanded')">
+                    <div class="timeline-header">
+                        <div class="timeline-main">
+                            <div class="timeline-date">Mar 2015 - Jan 2017</div>
+                            <div class="timeline-company">HOST ANALYTICS</div>
+                            <div class="timeline-role">Principal Engineering Manager</div>
+                        </div>
+                        <div class="timeline-expand">▼</div>
+                    </div>
+                    <div class="timeline-details">
+                        <ul class="timeline-highlights">
+                            <li>Single point of contact for Application Security for engineering org</li>
+                            <li>Improved engineering processes: introduced Crucible for code review, improved logging via PostSharp</li>
+                            <li>Improved code quality via static code analysis using Visual Studio (FxCop)</li>
+                            <li>Improved security via static code analysis using Checkmarx tool</li>
+                            <li>Ensured compliance by addressing all vulnerabilities reported every quarter within SLA</li>
+                            <li>Improved application performance: moved logic from DB Layer to Middle Layer, achieved zero connection leaks</li>
+                            <li>Single point of contact for Birst Tool (Ad hoc Reports)</li>
+                            <li>Developed high-level abstractions/functional components for Test Automation</li>
+                            <li>Part of leadership team and Architecture team in deciding Strategy and Architecture</li>
+                        </ul>
+                        <div class="timeline-tech-compact">
+                            <span class="tech-tag">#️⃣ C#</span>
+                            <span class="tech-tag">🔷 .NET</span>
+                            <span class="tech-tag">☁️ AWS</span>
+                            <span class="tech-tag">📊 MS SQL</span>
+                            <span class="tech-tag">📊 SSRS</span>
+                            <span class="tech-tag">📊 SSAS</span>
+                            <span class="tech-tag">🔒 Checkmarx</span>
+                            <span class="tech-tag">📈 Birst</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-compact" onclick="this.classList.toggle('expanded')">
+                    <div class="timeline-header">
+                        <div class="timeline-main">
+                            <div class="timeline-date">Apr 2014 - Feb 2015</div>
+                            <div class="timeline-company">Consultancy & Freelancing</div>
+                            <div class="timeline-role">Independent Consultant</div>
+                        </div>
+                        <div class="timeline-expand">▼</div>
+                    </div>
+                    <div class="timeline-details">
+                        <ul class="timeline-highlights">
+                            <li>Worked on multiple projects on contract basis</li>
+                            <li>Provided IT training programs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item-compact" onclick="this.classList.toggle('expanded')">
+                    <div class="timeline-header">
+                        <div class="timeline-main">
+                            <div class="timeline-date">Apr 2005 - Apr 2014 (9 years)</div>
+                            <div class="timeline-company">IVY COMPTECH</div>
+                            <div class="timeline-role">Software Development Manager</div>
+                        </div>
+                        <div class="timeline-expand">▼</div>
+                    </div>
+                    <div class="timeline-details">
+                        <ul class="timeline-highlights">
+                            <li>Launched on-time critical Bwin.party products in US New Jersey - enabled B2B partner Borgata licensing for online gaming</li>
+                            <li>Generated $100M revenue since launch (till 2014) in regulated New Jersey market</li>
+                            <li>Delivered all B2B projects on-time with quality, improved customer satisfaction</li>
+                            <li>B2B partners: Danskespil (Denmark) - side games, mobile games; PMU (France) - offline events per regulatory requirements</li>
+                            <li><strong>Exceptional Performance Award 2012</strong> for crucial role in delivering challenging projects in regulated markets (Spain, Denmark, France 2011-2012)</li>
+                            <li>Delivered "Bwin.com migration" program - backend migration Bwin.com → Party platform, key milestone, tremendous maintenance cost savings</li>
+                            <li>Implemented client-side network bandwidth optimization: Google protobuf runtime encoding, refactored packet headers</li>
+                            <li>40% network bandwidth savings - appreciated by CTO</li>
+                            <li>Demonstrated success in globally distributed delivery model within stringent time and quality constraints</li>
+                            <li>Implemented i18n and L10n projects successfully in 20 languages, added multi-currency support</li>
+                            <li>Recognized for pioneering process improvements leading to judicious utilization of time and costs</li>
+                        </ul>
+                        <div class="timeline-tech-compact">
+                            <span class="tech-tag">⚙️ Visual C++</span>
+                            <span class="tech-tag">📦 MFC</span>
+                            <span class="tech-tag">☕ Java</span>
+                            <span class="tech-tag">🐬 MySQL</span>
+                            <span class="tech-tag">🏔️ Terracotta</span>
+                            <span class="tech-tag">💾 EHCache</span>
+                            <span class="tech-tag">📨 ActiveMQ</span>
+                            <span class="tech-tag">📦 Protobuf</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-compact" onclick="this.classList.toggle('expanded')">
+                    <div class="timeline-header">
+                        <div class="timeline-main">
+                            <div class="timeline-date">Feb 1998 - Apr 2005 (7 years)</div>
+                            <div class="timeline-company">GEOMETRIC SOFTWARE (Now GEOMETRIC GLOBAL)</div>
+                            <div class="timeline-role">Group Lead</div>
+                        </div>
+                        <div class="timeline-expand">▼</div>
+                    </div>
+                    <div class="timeline-details">
+                        <ul class="timeline-highlights">
+                            <li>Served as Group Leader (Project Lead) with Geometric Software, Mumbai</li>
+                            <li>Applied skills in C and Visual C++/MFC</li>
+                            <li>Led development of multiple projects: Nestlib, Feature recognition, Feature works</li>
+                            <li>Integration of Feature recognition library with SolidWorks</li>
+                            <li><strong>Got award for contribution to Nestlib</strong></li>
+                            <li>Appreciation by customer in 2004</li>
+                        </ul>
+                        <div class="timeline-tech-compact">
+                            <span class="tech-tag">⚙️ C</span>
+                            <span class="tech-tag">⚙️ Visual C++</span>
+                            <span class="tech-tag">📦 MFC</span>
+                            <span class="tech-tag">🔧 SolidWorks API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            
+            <div class="two-col">
+                <div>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 12px; color: var(--dark); font-weight: 600;">🎓 Education</h3>
+                    <div style="display: grid; gap: 10px;">
+                        <div class="edu-card">
+                            <div class="edu-degree">M.Tech (Mechanical Design)</div>
+                            <div class="edu-school">IIT Kharagpur</div>
+                            <div class="edu-year">1996-1998 | CGPA: 9.17/10</div>
+                        </div>
+                        <div class="edu-card">
+                            <div class="edu-degree">Executive MBA</div>
+                            <div class="edu-school">MAHE Manipal</div>
+                            <div class="edu-year">2005-2006</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 12px; color: var(--dark); font-weight: 600;">✅ Professional Certifications</h3>
+                    <div style="display: grid; gap: 10px;">
+                        <div class="edu-card">
+                            <div class="edu-degree">Certified Scrum Master (CSM)</div>
+                            <div class="edu-school">Scrum Alliance</div>
+                            <div class="edu-year">2016</div>
+                        </div>
+                        <div class="edu-card">
+                            <div class="edu-degree">Data Science & AI Certificate</div>
+                            <div class="edu-school">Accredian</div>
+                            <div class="edu-year">2021</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 1.05rem; margin: 18px 0 10px; color: var(--dark); font-weight: 600;">🆕 Recent Certifications (2025)</h3>
+            <div class="skills-compact">
+                <div class="edu-card">
+                    <div class="edu-degree">☁️ Architecting Solutions on AWS</div>
+                    <div class="edu-school">Amazon Web Services</div>
+                    <div class="edu-year">Nov 2025 | ID: IZ7B14VYD3TD</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">🔒 Demystifying PCI-DSS</div>
+                    <div class="edu-school">Alison</div>
+                    <div class="edu-year">Nov 2025 | ID: 6356-11154051</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">☁️ AWS Cloud Technical Essentials</div>
+                    <div class="edu-school">Amazon Web Services</div>
+                    <div class="edu-year">Oct 2025 | ID: RT1AJMXBR86F</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">🐍 Parallel & Concurrent Programming</div>
+                    <div class="edu-school">LinkedIn Learning</div>
+                    <div class="edu-year">Sep 2025</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">🤖 Generative AI Fundamentals</div>
+                    <div class="edu-school">Databricks Academy</div>
+                    <div class="edu-year">Sep 2025 | Exp: Sep 2027</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">💡 AI @ Work: 10X Productivity</div>
+                    <div class="edu-school">360DigiTMG Malaysia</div>
+                    <div class="edu-year">Aug 2025</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honors & Awards -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Honors & Awards</h2>
+            <div class="education-compact">
+                <div class="value-card">
+                    <div class="value-icon">🏆</div>
+                    <div class="value-title">Exceptional Performance Award</div>
+                    <div class="value-text">IVY COMPTECH - 2012. Crucial role in delivering challenging projects in regulated markets (Spain, Denmark, France) 2011-2012</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💰</div>
+                    <div class="value-title">$100M Project Success</div>
+                    <div class="value-text">IVY COMPTECH - 2013. Led successful launch of Bwin.party in New Jersey generating $100M+ revenue in regulated US market</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🏆</div>
+                    <div class="value-title">Nestlib Contribution Award</div>
+                    <div class="value-text">Geometric Software - 2004. Outstanding contribution to Nestlib project development and technical excellence</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <div class="value-title">Customer Appreciation</div>
+                    <div class="value-text">Geometric Software - 2004. Customer appreciation for exceptional service delivery and technical support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications & Articles -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Publications & Articles</h2>
+            <div class="education-compact">
+                <div class="edu-card">
+                    <div class="edu-degree">📝 Comfort Zone</div>
+                    <div class="edu-school">Published on Medium</div>
+                    <div class="edu-year">Article on professional growth and stepping outside comfort zones</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">📝 Impactful Tester</div>
+                    <div class="edu-school">Published on Medium</div>
+                    <div class="edu-year">Insights on quality assurance and testing best practices</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">📝 LinkedIn Articles</div>
+                    <div class="edu-school">Multiple Publications</div>
+                    <div class="edu-year">Regular posts on engineering leadership, AI adoption, team management</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">📝 Technical Insights</div>
+                    <div class="edu-school">Various Platforms</div>
+                    <div class="edu-year">Sharing experiences in fintech, gaming, and enterprise solutions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sreenivasarao Kosuru | <
